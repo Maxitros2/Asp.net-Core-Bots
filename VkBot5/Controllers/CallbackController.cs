@@ -39,6 +39,17 @@ namespace VkBot5.Controllers
                         });
                         return Ok("Message");
                     }
+                case "message_typing_state":
+                    {
+                        long msg = incomeMessage.Object.Value<long>("from_id");
+                        vkApi.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
+                        {
+                            RandomId = new DateTime().Millisecond,
+                            PeerId = msg,
+                            Message = "че пишешь хуила"
+                        });
+                        return Ok("Type");
+                    }
             }
             return Ok("ok");
         }
