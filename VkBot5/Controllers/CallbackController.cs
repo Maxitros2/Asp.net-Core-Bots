@@ -37,7 +37,7 @@ namespace VkBot5.Controllers
                             PeerId = msg.PeerId.Value,
                             Message = "соси хуй"
                         });
-                        return Ok("Message");
+                        break;                       
                     }
                 case "message_typing_state":
                     {
@@ -48,7 +48,7 @@ namespace VkBot5.Controllers
                             PeerId = msg,
                             Message = "че пишешь хуила"
                         });
-                        return Ok("Type");
+                        break;
                     }
             }
             return Ok("ok");
