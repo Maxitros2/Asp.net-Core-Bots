@@ -35,8 +35,10 @@ namespace VkBot5
             {
                 var api = new VkApi(services);
                 api.Authorize(new ApiAuthParams { AccessToken = Configuration["Config:Token"] });
+                Console.WriteLine(api.Status);
                 return api;
             });
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VkBot5", Version = "v1" });
@@ -63,6 +65,7 @@ namespace VkBot5
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }

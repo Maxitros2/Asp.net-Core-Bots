@@ -37,7 +37,7 @@ namespace VkBot5.Controllers
                             PeerId = msg.PeerId.Value,
                             Message = "соси хуй"
                         });
-                        break;
+                        return Ok("Message");
                     }
             }
             return Ok("ok");

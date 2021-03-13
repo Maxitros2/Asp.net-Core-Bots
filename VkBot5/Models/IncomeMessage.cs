@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace VkBot5.Models
         [JsonProperty("type")]
         public string Type { get; set; }
         [JsonProperty("object")]
-        public string Object { get; set; }
+        public JObject Object { get; set; }
         [JsonProperty("group_id")]
-        public string GroupId { get; set; }
+        public long GroupId { get; set; }
     }
 }
